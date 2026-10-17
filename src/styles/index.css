@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas-bg: #dcdcdc;
+  --canvas-surface: #e5e7eb;
+  --card-bg: #ffffff;
+  --navy-950: #060E27;
+  --navy-900: #0A1538;
+  --navy-850: #0E1D4B;
+  --navy-800: #102052;
+  --royal-600: #1E3FAE;
+  --royal-700: #162E85;
+  --gold-500: #E8A317;
+  --gold-400: #F3B736;
+  --gold-300: #F5C14B;
+  --white: #FFFFFF;
+  --ink: #0B1220;
+  --ink-muted: #4B5563;
+  --mist: #F4F6FB;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #dcdcdc;
+    color: #0B1220;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+  }
+}
+
+/* Custom scrollbar for light silver-gray theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #dcdcdc;
+}
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 5px;
+  border: 2px solid #dcdcdc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8A317;
+}
+
+/* Gold Gradient Shimmer Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B47500 0%, #E8A317 40%, #F5C14B 70%, #C7880A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Premium Gold Liquid Shimmer Animation */
+@keyframes goldLiquidShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subtle organic float for editorial accent word 'with' */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(-1deg);
+  }
+}
+
+/* Subtle luxury pulse for ambient gold glow */
+@keyframes luxuryAmbientPulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.03);
+  }
+}
+
+.gold-gradient-animated {
+  background: linear-gradient(
+    115deg,
+    #9A5F00 0%,
+    #D98F09 20%,
+    #FFF4CC 45%,
+    #F5C14B 58%,
+    #E8A317 78%,
+    #9A5F00 100%
+  );
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldLiquidShimmer 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: background-position;
+}
+
+.floating-accent-word {
+  display: inline-block;
+  animation: floatSubtle 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.luxury-ambient-glow {
+  animation: luxuryAmbientPulse 6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.blue-gradient-text {
+  background: linear-gradient(135deg, #1E3FAE 0%, #2563EB 50%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Header & Cards on light background */
+.glass-header {
+  background: rgba(220, 220, 220, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(11, 18, 32, 0.08);
+}
+
+.glass-card-light:hover {
+  border-color: rgba(232, 163, 23, 0.6);
+  box-shadow: 0 12px 30px -10px rgba(6, 14, 39, 0.15);
+}
+
+.glass-card-navy {
+  background: rgba(10, 21, 56, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 163, 23, 0.3);
+}
+
+/* Hairline rule beside headings */
+.gold-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #E8A317 50%, transparent 100%);
+}
+
+/* Subtle background grid pattern on #dcdcdc */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(11, 18, 32, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 18, 32, 0.06) 1px, transparent 1px);
+}
+
+/* Active card subtle slide-up hover / float animation */
+@keyframes slideUpFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-slide-up-float {
+  animation: slideUpFloat 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+/* Hide scrollbar completely across Chrome, Safari, Edge, Firefox */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
