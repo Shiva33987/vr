@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "description": "VR Media & Advertising Platform monorepo containing frontend and backend services.",
+  "workspaces": [
+    "frontend"
+  ],
+  "allowScripts": {
+    "esbuild": true
+  },
   "scripts": {
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
     "dev": "npm --prefix frontend run dev",
-    "build": "npm --prefix frontend run build",
-    "test": "npm --prefix frontend run test",
+    "test": "npm --prefix frontend test",
     "lint": "npm --prefix frontend run lint",
     "preview": "npm --prefix frontend run preview"
   }
